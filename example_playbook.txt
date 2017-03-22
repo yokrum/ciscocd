@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+  - name: create user johnny
+    user: name=johnny state=absent
+    become: yes
+    become_method: sudo
+  - name: install mc
+    become: yes
+    become_method: sudo
+    yum: name=mc state=latest
