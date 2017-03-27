@@ -1,0 +1,21 @@
+- hosts: localhost
+  tasks:
+  - name: install docker
+    become: yes
+    become_method: sudo
+    yum: 
+     name: docker
+     state: latest
+  - name: add user ec2-user to docker group
+    user:
+     name: ec2-user
+     groups: docker
+     append: yes
+    become: yes
+    become_method: sudo
+  - name: start docker service
+    service: 
+     name: docker
+     state: started 
+    become: yes
+    become_method: sudo
