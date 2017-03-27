@@ -1,1 +1,2 @@
 #create image with maven using COPY
+#(need to copy apache-maven-3.3.9-bin.tar.gz to this directory first)
